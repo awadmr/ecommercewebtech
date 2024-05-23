@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th = "https://www.thymeleaf.org/">
+
+<head th:replace="~{fragments::header}">
+
+</head>
+
+
+
+<body class="bg-gradient-light">
+
+<div class="container">
+
+    <!-- Outer Row -->
+
+
+
+    <div class="card-body p-0">
+        <!-- Nested Row within Card Body -->
+        <div class="row justify-content-center ">
+            <div class="col-lg-6">
+            <div class="card o-hidden border-0 shadow-lg my-5">
+                <div class="card-body p-0">
+
+                <div class="p-5 ">
+                    <div class="text-center">
+                                <div class="text-center">
+                                    <h1 class="h4 text-gray-600 mb-2">SIGN IN</h1>
+                                    <p class="mb-5">Please use your admin credentials to sign in ! </p>
+
+                                </div>
+                                <div th:if = "${param.error}" class="alert alert-danger text-center">
+                                    Invalid username or password!
+                                </div>
+                                <div th:if = "${param.logout}" class="alert alert-success text-center">
+                                    You have been logged out!
+                                </div>
+                                <form class="user" th:action="@{/do-login}" method="post">
+                                    <div class="form-group">
+                                        <input type="email" name="username" class="form-control form-control-user"
+                                               id="username" aria-describedby="emailHelp"
+                                               placeholder="Enter Email Address...">
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="password" name="password" id="password" class="form-control form-control-user"
+                                               placeholder="Password">
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="custom-control custom-checkbox small">
+                                            <input type="checkbox" class="custom-control-input bg-secondary " id="customCheck">
+                                            <label class="custom-control-label" for="customCheck">Remember
+                                                Me</label>
+                                        </div>
+                                    </div>
+                                    <button type="submit" class="btn btn-secondary btn-user btn-block " style="font-size: 1rem ;">
+                                        Sign in
+                                    </button>
+                                    <hr>
+                                </form>
+                                <hr>
+                                <div class="text-center">
+                                    <a class="small text-secondary" th:href = "@{/forgot-password}" href="forgot-password.html">Forgot Password?</a>
+                                </div>
+                                <div class="text-center">
+                                    <a class="small text-secondary" th:href = "@{/register}" href="register.html">Create an Account!</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<div th:replace="~{fragments::script}"></div>
+</body>
+
+</html>

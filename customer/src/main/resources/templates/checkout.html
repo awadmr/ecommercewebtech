@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org/" xmlns="http://www.w3.org/1999/html">
+<!-- Basic -->
+
+
+    <head th:replace="~{fragments::head}">
+        <title th:text="${title}">Check out</title>
+        <meta name="keywords" content="">
+        <meta name="description" content="">
+        <meta name="author" content="">
+    </head>
+
+<link href="@{/css/all.css}" rel="stylesheet">
+<link rel="shortcut icon" href="/images/favicon.ic" type="image/x-icon">
+<link rel="apple-touch-icon" href="/images/apple">
+<!-- Bootstrap CSS -->
+<!-- Site CSS -->
+<link rel="stylesheet" href="/css/style.css">
+<!-- Responsive CSS -->
+<link rel="stylesheet" href="/css/responsive.css">
+<link rel="stylesheet" href="/images/all.css">
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+
+
+<!-- Custom CSS -->
+<link rel="stylesheet" href="/css/custom.css">
+<link rel="stylesheet" href="/css/auth.css">
+<!-- Site Icons -->
+
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+<link rel="icon" href="/favicon.ico" type="image/x-icon">
+<link rel="shortcut icon" th:href="@{/images/favicon.ico}" type="image/x-icon">
+<link rel="apple-touch-icon" th:href="@{/images/apple-touch-icon.png}">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/fontawesome.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css">
+
+<!--[if lt IE 9]>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.3.0/respond.min.js"></script>
+<![endif]-->
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+<link rel="stylesheet" th:href="@{/css/bootsnav.css}">
+<link rel="stylesheet" th:href="@{/css/bootstrap.select.css}">
+<link rel="stylesheet" th:href="@{/css/jquery-ui.css}">
+<link rel="stylesheet" th:href="@{/css/carousel-ticker.css}">
+<link rel="stylesheet" th:href="@{/css/code_animate.css}">
+<link rel="stylesheet" th:href="@{/css/superslides.css}">
+<link rel="stylesheet" th:href="@{/css/owl-carousel.min.css}">
+<link rel="stylesheet" th:href="@{/css/baguetteBox.min.css}">
+<link rel="stylesheet" th:href="@{/css/animate.css}">
+<link rel="stylesheet" th:href="@{/css/style.css}">
+<link rel="stylesheet" th:href="@{/css/responsive.css}">
+<link rel="stylesheet" th:href="@{/css/custom.css}">
+<body>
+<!-- Start Main Top -->
+<div th:replace="~{fragments::main-top}">
+</div>
+<!-- End Main Top -->
+
+
+<!-- Start Main Top -->
+<header th:replace="~{fragments::main-header}">
+</header>
+<!-- End Main Top -->
+
+<!-- Start Top Search -->
+<div th:replace="~{fragments::top-search}">
+</div>
+<!-- End Top Search -->
+
+<!-- Start All Title Box -->
+<div th:replace="~{fragments::all-title-box}">
+</div>
+<!-- End All Title Box -->
+
+<!-- Start Cart  -->
+<div class="cart-box-main">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6 col-lg-6 mb-3">
+                <div class="checkout-address">
+                    <div class="title-left">
+                        <h3>Billing address</h3>
+                    </div>
+                    <form class="needs-validation" novalidate th:object="${customer}">
+
+                        <div class="mb-3">
+                            <label for="username">Username *</label>
+                            <div class="input-group">
+                                <input type="text" class="form-control" th:field="*{username}" id="username"
+                                       placeholder="" readonly>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="phone">Phone Number *</label>
+                            <input type="text" class="form-control" th:field="*{phoneNumber}" id="phone" placeholder=""
+                                   readonly>
+                        </div>
+                        <div class="mb-3">
+                            <label for="address">Address *</label>
+                            <input type="text" class="form-control"
+                                   th:value="${customer.address + ' ' + customer.city + ' ' + customer.country}"
+                                   id="address" placeholder="" readonly>
+                        </div>
+                        <a th:href="@{/profile}" class="btn btn-primary"> Change information</a>
+                        <hr class="mb-4">
+                        <div class="title"><span>Payment Methods</span></div>
+                        <div class="d-block my-3">
+                            <div class="custom-control custom-radio">
+                                <input id="debit" name="paymentMethod" type="radio" checked class="custom-control-input"
+                                       required>
+                                <label class="custom-control-label" for="debit">Cash</label>
+                            </div>
+                        </div>
+                        <hr class="mb-1">
+                    </form>
+                </div>
+            </div>
+            <div class="col-sm-6 col-lg-6 mb-3">
+                <form th:action="@{/add-order}" method="post" th:object="${shoppingCart}">
+                    <input type="hidden" name="id" th:value="${id}">
+                    <div class="col-md-12 col-lg-12">
+                        <div class="odr-box">
+                            <div class="title-left">
+                                <h3>Shopping cart</h3>
+                            </div>
+                            <div class="rounded p-2 bg-light">
+                                <div class="media mb-2 border-bottom" th:each="item : ${shoppingCart.getCartItems()}">
+                                    <div class="media-body"><a href="product-detail.html"
+                                                               th:text="${item.product.name}"></a>
+                                        <div class="small text-muted">Price: [(${item.product.costPrice})] RWF <span
+                                                class="mx-2">|</span> Qty: [(${item.quantity})]
+                                            <span class="mx-2">|</span> Subtotal: + [(${item.unitPrice *
+                                            item.quantity})] RWF
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12 col-lg-12">
+                        <div class="order-box">
+                            <div class="title-left">
+                                <h2><b>Your order</b></h2>
+                            </div>
+                            <div class="d-flex">
+                                <div class="font-weight-bold">Product</div>
+                                <div class="ml-auto font-weight-bold">Total</div>
+                            </div>
+                            <hr class="my-1">
+                            <div class="d-flex">
+                                <h4>Sub Total</h4>
+                                <div class="ml-auto font-weight-bold" th:text="${shoppingCart.totalPrice}"></div>
+                            </div>
+                            <hr class="my-1">
+                            <div class="d-flex">
+                                <h4>Tax</h4>
+                                <div class="ml-auto font-weight-bold"> 2,000.00 RWF</div>
+                            </div>
+                            <div class="d-flex">
+                                <h4>Delivery Fee</h4>
+                                <div class="ml-auto font-weight-bold"> Free</div>
+                            </div>
+                            <hr>
+                            <div class="d-flex gr-total">
+                                <h5>Grand Total</h5>
+                                <div class="ml-auto h5" th:text="${shoppingCart.totalPrice + 2000} + 'RWF'"></div>
+                            </div>
+                            <hr>
+                        </div>
+                    </div>
+                    <div class="col-12 d-flex shopping-box">
+                        <button type="submit" class="ml-auto btn hvr-hover text-white">Place Order</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div th:replace="~{fragments::script}"></div>
+</body>
+
+</html>

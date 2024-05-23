@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org/">
+<!-- Basic -->
+
+<head th:replace="~{fragments::head}"></head>
+<link href="@{/css/all.css}" rel="stylesheet"></link>
+<link rel="shortcut icon" href="/images/favicon.ic" type="image/x-icon">
+<link rel="apple-touch-icon" href="/images/apple">
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+<!-- Site CSS -->
+<link rel="stylesheet" href="/css/style.css">
+<!-- Responsive CSS -->
+<link rel="stylesheet" href="/css/responsive.css">
+<link rel="stylesheet" href="/images/all.css">
+
+<!-- Custom CSS -->
+<link rel="stylesheet" href="/css/custom.css">
+<link rel="stylesheet" href="/css/auth.css">
+<!-- Site Icons -->
+
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+<link rel="icon" href="/favicon.ico" type="image/x-icon">
+<link rel="shortcut icon" th:href="@{/images/favicon.ico}" type="image/x-icon">
+<link rel="apple-touch-icon" th:href="@{/images/apple-touch-icon.png}">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/fontawesome.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css">
+
+<!--[if lt IE 9]>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.3.0/respond.min.js"></script>
+<![endif]-->
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+<link rel="stylesheet" th:href="@{/css/bootsnav.css}">
+<link rel="stylesheet" th:href="@{/css/bootstrap.select.css}">
+<link rel="stylesheet" th:href="@{/css/jquery-ui.css}">
+<link rel="stylesheet" th:href="@{/css/carousel-ticker.css}">
+<link rel="stylesheet" th:href="@{/css/code_animate.css}">
+<link rel="stylesheet" th:href="@{/css/superslides.css}">
+<link rel="stylesheet" th:href="@{/css/owl-carousel.min.css}">
+<link rel="stylesheet" th:href="@{/css/baguetteBox.min.css}">
+<link rel="stylesheet" th:href="@{/css/animate.css}">
+<link rel="stylesheet" th:href="@{/css/style.css}">
+<link rel="stylesheet" th:href="@{/css/responsive.css}">
+<link rel="stylesheet" th:href="@{/css/custom.css}">
+<body>
+<!-- Start Main Top -->
+<div th:replace="~{fragments::main-top}">
+</div>
+<!-- End Main Top -->
+
+
+<!-- Start Main Top -->
+<header th:replace="~{fragments::main-header}">
+</header>
+<!-- End Main Top -->
+
+<!-- Start Top Search -->
+<div th:replace="~{fragments::top-search}">
+</div>
+<!-- End Top Search -->
+
+
+<!-- Start All Title Box -->
+<div th:replace="~{fragments::all-title-box}">
+</div>
+<!-- End All Title Box -->
+
+<!-- Start Contact Us  -->
+<div style="display: flex; justify-content: center; align-items: center; text-align: center; background-color: #d92e2e; width: 100%; height: 450px; margin-top: 20px; margin-bottom: 20px;">
+    <div>
+        <div>
+            <div class="#">
+                <div class="form">
+                    <h3 style="color: #f0f0f0; font-weight: 700; font-size: 22px; margin-top: 15px;">CONTACT US</h3>
+                    <p style="color: #f0f0f0; font-weight: 400; font-size: 20px; margin-bottom: 15px;">
+                        Please send a message or call us if you want to comment<br>
+                        on our food or if you feel that our food<br>
+                        has problems.
+                    </p>
+
+                        <ul class="list-time">
+                            <li style="color: #f0f0f0; font-weight: 400; font-size: 18px">
+                                <i class="fas fa-map-marker-alt"></i> Address: KK123, Kacyiru Rikiri, Kigali Heights
+                            </li>
+                            <li style="color: #f0f0f0; font-weight: 400; font-size: 18px">
+                                <i class="fas fa-phone-square"></i> Phone number: +250 7899 12345
+                            </li>
+                            <li style="color: #f0f0f0; font-weight: 400; font-size: 18px">
+                                <i class="fas fa-envelope"></i> Email: info@javahouse.com
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<!-- End Cart -->
+
+<!-- Start Feed  -->
+<div th:replace="~{fragments::instagram-box}">
+</div>
+<!-- End Feed  -->
+
+<!-- Start Footer  -->
+
+<div th:replace="~{fragments::script}"></div>
+</body>
+
+</html>

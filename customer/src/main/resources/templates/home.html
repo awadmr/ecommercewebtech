@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org/">
+<!-- Basic -->
+
+<head th:replace="~{fragments::head}">
+    <title th:text="${title}">Home</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    </head>
+<link href="@{/css/all.css}" rel="stylesheet">
+<link rel="shortcut icon" href="/images/favicon.ic" type="image/x-icon">
+<link rel="apple-touch-icon" href="/images/apple">
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+<!-- Site CSS -->
+<link rel="stylesheet" href="/css/style.css">
+<!-- Responsive CSS -->
+<link rel="stylesheet" href="/css/responsive.css">
+<link rel="stylesheet" href="/images/all.css">
+
+<!-- Custom CSS -->
+<link rel="stylesheet" href="/css/custom.css">
+<link rel="stylesheet" href="/css/auth.css">
+<!-- Site Icons -->
+
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+<link rel="icon" href="/favicon.ico" type="image/x-icon">
+<link rel="shortcut icon" th:href="@{/images/favicon.ico}" type="image/x-icon">
+<link rel="apple-touch-icon" th:href="@{/images/apple-touch-icon.png}">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/fontawesome.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css">
+
+<!--[if lt IE 9]>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.3.0/respond.min.js"></script>
+<![endif]-->
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+<link rel="stylesheet" th:href="@{/css/bootsnav.css}">
+<link rel="stylesheet" th:href="@{/css/bootstrap.select.css}">
+<link rel="stylesheet" th:href="@{/css/jquery-ui.css}">
+<link rel="stylesheet" th:href="@{/css/carousel-ticker.css}">
+<link rel="stylesheet" th:href="@{/css/code_animate.css}">
+<link rel="stylesheet" th:href="@{/css/superslides.css}">
+<link rel="stylesheet" th:href="@{/css/owl-carousel.min.css}">
+<link rel="stylesheet" th:href="@{/css/baguetteBox.min.css}">
+<link rel="stylesheet" th:href="@{/css/animate.css}">
+<link rel="stylesheet" th:href="@{/css/style.css}">
+<link rel="stylesheet" th:href="@{/css/responsive.css}">
+<link rel="stylesheet" th:href="@{/css/custom.css}">
+<body>
+<div th:replace="~{fragments::main-top}"></div>
+<!-- End Main Top -->
+
+<!-- Start Main Top -->
+<header th:replace="~{fragments::main-header}"></header>
+<!-- End Main Top -->
+
+<!-- Start Top Search -->
+<div th:replace="~{fragments::top-search}">
+</div>
+<!-- End Top Search -->
+
+<!-- Start Slider -->
+<div id="slides-shop" class="cover-slides">
+    <ul class="slides-container">
+        <li class="text-center">
+            <img src="images/Fish 01 - Fish Tacos.jpg" alt="">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h1 class="m-b-20"><strong>Welcome To <br> Java House Seafoods</strong></h1>
+                        <p class="m-b-40">Enjoy your meal! <br> Have you a good, fun working day and delicious meal!</p>
+                    </div>
+                </div>
+            </div>
+        </li>
+        <li class="text-center">
+            <img src="images/Crab 02 - Crab Toast.jpg" alt="">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h1 class="m-b-20"><strong>Welcome To <br> Java House Seafoods</strong></h1>
+                        <p class="m-b-40">Enjoy your meal! <br> Have you a good, fun working day and delicious meal!</p>
+                    </div>
+                </div>
+            </div>
+        </li>
+        <li class="text-center">
+            <img src="images/Shrimp 01 - Shrimp Monterey.jpg" alt="">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+
+                        <h1 class="m-b-20"><strong>Welcome To <br> Java House Seafoods</strong></h1>
+                        <p class="m-b-40">Enjoy your meal! <br> Have you a good, fun working day and delicious meal!</p>
+                    </div>
+                </div>
+            </div>
+        </li>
+    </ul>
+    <div class="slides-navigation">
+        <a href="#" class="next"><i class="fa fa-angle-right" aria-hidden="false"></i></a>
+        <a href="#" class="prev"><i class="fa fa-angle-left" aria-hidden="false"></i></a>
+    </div>
+</div>
+<!-- End Slider -->
+
+
+<!-- Start About Page  -->
+<div class="about-box-main">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="banner-frame"><img class="img-fluid" src="images/Intro.png" alt=""/>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <h2 class="noo-sh-title-top">We are <span>Java House Seafoods</span></h2>
+                <p>Seafood is our only business. Having spent many years in the seafood business, we know where to find
+                    the best products.
+                    Java House Seafoods deals only with high-end processors and reliable importers. We handle quality
+                    products that
+                    we would serve to our friends and family. If it is good enough for our table, you will want it on
+                    yours!</p>
+                <p>At Java House, you can choose the best of both. Here, guests are invited on an adventure in great
+                    food. We will create a great experience for you.</p>
+                <p>Our menu is both classic and modern featuring lighter items to indulgent seafood presentations like
+                    crab, shrimp, lobster,...
+                    We deliver more than just incredible food: We create remarkable experiences.</p>
+                <a class="btn hvr-hover" href="#">Read More</a>
+            </div>
+        </div>
+        <div class="row my-5">
+            <div class="col-sm-6 col-lg-4">
+                <div class="service-block-inner">
+                    <h3>We are Trusted</h3>
+                    <p>Lorem Java House Seafoods deals only with high-end processors and reliable importers.
+                        We handle quality products that we would serve to our friends and family. </p>
+                </div>
+            </div>
+            <div class="col-sm-6 col-lg-4">
+                <div class="service-block-inner">
+                    <h3>We are Professional</h3>
+                    <p>Here, guests are invited on an adventure in great food. We will create a great experience for
+                        you.
+                        We deliver more than just incredible food: We create remarkable experiences.
+                    </p>
+                </div>
+            </div>
+            <div class="col-sm-6 col-lg-4">
+                <div class="service-block-inner">
+                    <h3>We are Expert</h3>
+                    <p>We Have spent many years in the seafood business, we know where to find the best products.
+                        Our menu is both classic and modern featuring lighter items to indulgent seafood presentations
+                        like crab, shrimp, lobster,... </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Start Feed  -->
+<div th:replace="~{fragments::instagram-box}">
+</div>
+
+<!-- End Feed  -->
+
+
+<!-- Start Footer  -->
+<footer th:replace="~{fragments::footer}">
+
+</footer>
+
+
+
+<!-- ALL JS FILES -->
+<div th:replace="~{fragments::script}"></div>
+</body>
+
+</html>

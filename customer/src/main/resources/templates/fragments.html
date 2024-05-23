@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org/">
+<head th:fragment="head">
+
+
+    <!-- Mobile Metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Site Metas -->
+    <title th:text="${title}">Menu</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+</head>
+<link href="@{/css/all.css}" rel="stylesheet">
+<link rel="shortcut icon" href="/images/favicon.ic" type="image/x-icon">
+<link rel="apple-touch-icon" href="/images/apple">
+<!-- Bootstrap CSS -->
+<!-- Site CSS -->
+<link rel="stylesheet" href="/css/style.css">
+<!-- Responsive CSS -->
+<link rel="stylesheet" href="/css/responsive.css">
+<link rel="stylesheet" href="/images/all.css">
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+
+
+<!-- Custom CSS -->
+<link rel="stylesheet" href="/css/custom.css">
+<link rel="stylesheet" href="/css/auth.css">
+<!-- Site Icons -->
+
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+<link rel="icon" href="/favicon.ico" type="image/x-icon">
+<link rel="shortcut icon" th:href="@{/images/favicon.ico}" type="image/x-icon">
+<link rel="apple-touch-icon" th:href="@{/images/apple-touch-icon.png}">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/fontawesome.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css">
+
+<!--[if lt IE 9]>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.3.0/respond.min.js"></script>
+<![endif]-->
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+<link rel="stylesheet" th:href="@{/css/bootsnav.css}">
+<link rel="stylesheet" th:href="@{/css/bootstrap.select.css}">
+<link rel="stylesheet" th:href="@{/css/jquery-ui.css}">
+<link rel="stylesheet" th:href="@{/css/carousel-ticker.css}">
+<link rel="stylesheet" th:href="@{/css/code_animate.css}">
+<link rel="stylesheet" th:href="@{/css/superslides.css}">
+<link rel="stylesheet" th:href="@{/css/owl-carousel.min.css}">
+<link rel="stylesheet" th:href="@{/css/baguetteBox.min.css}">
+<link rel="stylesheet" th:href="@{/css/animate.css}">
+<link rel="stylesheet" th:href="@{/css/style.css}">
+<link rel="stylesheet" th:href="@{/css/responsive.css}">
+<link rel="stylesheet" th:href="@{/css/custom.css}">
+<body>
+<!-- Start Main Top -->
+<div class="main-top" th:fragment="main-top">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                <div class="our-link">
+                    <ul class="offer-box">
+                        <li>
+                            <i class="fab fa-opencart"></i> Off 5% for new members
+                        </li>
+                        <li>
+                            <i class="fab fa-opencart"></i> Freeship
+                        </li>
+                        <li>
+                            <i class="fab fa-opencart"></i> 10% off Entire Purchase Promo code: Java250
+                        </li>
+                        <li>
+                            <i class="fab fa-opencart"></i> Off upto 10%! Shop Now
+                        </li>
+                        <li>
+                            <i class="fab fa-opencart"></i> Off 5% for new members
+                        </li>
+                        <li>
+                            <i class="fab fa-opencart"></i> Freeship
+                        </li>
+                        <li>
+                            <i class="fab fa-opencart"></i> 10% off Entire Purchase Promo code: Java250
+                        </li>
+                        <li>
+                            <i class="fab fa-opencart"></i> Off 10%! Shop Now
+                        </li>
+                    </ul>
+
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                <div class="login-box">
+
+                    <select id="basic" class="selectpicker show-tick form-control" data-placeholder="Sign In" onchange="location = this.value;">
+
+                        <option>Sign in | Sign up</option>
+                        <option th:if="${session.username == null}" value="http://localhost:8020/shop/login">Sign In</option>
+                        <option th:if="${session.username == null}" value="http://localhost:8020/shop/register">Sign Up</option>
+                        <option th:if="${session.username != null}" value="http://localhost:8020/shop/logout">Logout</option>
+                    </select>
+                </div>
+            </div>
+            <div class="text-slid-box">
+                <div id="offer-box" class="carouselTicker">
+
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
+</div>
+
+<!-- End Main Top -->
+
+<!-- Start Main Top -->
+<header class="main-header" th:fragment="main-header">
+    <!-- Start Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light navbar-default bootsnav">
+        <div class="container">
+            <!-- Start Header Navigation -->
+            <div class="navbar-header">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-menu"
+                        aria-controls="navbars-rs-food" aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="fa fa-bars"></i>
+                </button>
+                <a class="navbar-brand" th:href="@{/}"><img th:src="@{/images/logo.png}" class="logo" width="180"
+                                                            height="60" alt=""></a>
+            </div>
+            <!-- End Header Navigation -->
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="navbar-menu">
+                <ul class="nav navbar-nav ml-auto" data-in="fadeInDown" data-out="fadeOutUp">
+                    <li class="nav-item"><a class="nav-link" th:href="@{/}">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" th:href="@{/menu}">Menu</a></li>
+
+                    <li class="dropdown">
+                        <a href="#" class="nav-link dropdown-toggle " data-toggle="dropdown">Shop</a>
+                        <ul class="dropdown-menu">
+                            <li><a th:href="@{/shop-detail}">Shop Detail</a></li>
+                            <li><a th:href="@{/orders}">My order</a></li>
+                            <li><a th:href="@{/profile}">My Account</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item "><a class="nav-link" th:href="@{/contact}">Contact Us</a></li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+
+            <!-- Start Atribute Navigation -->
+            <div class="attr-nav2">
+                <ul>
+                    <li class="side-menu">
+                        <a th:href="@{/cart}">
+                            <i class="fa fa-shopping-bag"></i>
+                            <span class="badge"
+                                  th:text="${session.totalItems == null} ? '0' : ${session.totalItems}"></span>
+                            <p style="font-weight: bold; font-size: 15px;">My Cart</p>                       </a>
+                    </li>
+                </ul>
+
+            </div>
+
+            <div style="display: flex; align-items: center; margin: 16px; background-color: #f0f0f0; border: none; border-radius: 8px; font-family: 'Poppins', sans-serif; color: #d92e2e; font-size: 0.92rem;">
+                <span style="flex-grow: 1; text-align: center;">[[${remoteUser}]]</span><img src="images/prof.png" style="margin-left: 8px;">
+            </div>
+        </div>
+    </nav>
+    <!-- End Navigation -->
+</header>
+<!-- End Main Top -->
+
+<!-- Start Top Search -->
+<div class="top-search" th:fragment="top-search">
+    <div class="container">
+        <div class="input-group">
+            <span class="input-group-addon"><i class="fa fa-search"></i></span>
+            <label>
+                <input type="text" class="form-control" placeholder="Search">
+            </label>
+            <span class="input-group-addon close-search"><i class="fa fa-times"></i></span>
+        </div>
+    </div>
+</div>
+<!-- End Top Search -->
+
+<!-- Start Slider -->
+<div class="all-title-box" th:fragment="all-title-box">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <h2 th:text="${page}"></h2>
+                <ul class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="/shop/menu">Java House</a></li>
+                    <li class="breadcrumb-item active" th:text="${page}"></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Slider -->
+
+<!-- Start Feed  -->
+<div class="instagram-box" th:fragment="instagram-box">
+    <div class="main-instagram owl-carousel owl-theme">
+        <div class="item">
+            <div class="ins-inner-box">
+                <a href="/shop/index"><img th:src="@{/images/Fish 01 - Fish Tacos.jpg}" alt=""/></a>
+
+            </div>
+        </div>
+        <div class="item">
+            <div class="ins-inner-box">
+                <img th:src="@{/images/instagram-img-02.jpg}" alt=""/>
+            </div>
+        </div>
+        <div class="item">
+            <div class="ins-inner-box">
+                <a href="/shop/index"><img th:src="@{/images/Fish 04 - Red Pepper & Parmesan Tilapia.jpg}" alt=""/></a>
+            </div>
+        </div>
+        <div class="item">
+            <div class="ins-inner-box">
+                <a href="/shop/index"><img th:src="@{/images/Fish 05 - Almond-Topped Fish.jpg}" alt=""/></a>
+            </div>
+        </div>
+        <div class="item">
+            <div class="ins-inner-box">
+                <a href="/shop/index"><img th:src="@{/images/Shrimp 03 - Shrimp Tostadas with Avocado Salsa.jpg}"
+                                          alt=""/></a>
+            </div>
+        </div>
+        <div class="item">
+            <div class="ins-inner-box">
+                <a href="/shop/index"><img th:src="@{/images/Shrimp 08 - Grilled Shrimp and Chorizo Appetizers.jpg}"
+                                          alt=""/></a>
+            </div>
+        </div>
+        <div class="item">
+            <div class="ins-inner-box">
+                <a href="/shop/index"><img
+                        th:src="@{/images/Octopus 06 - Red Wine–Braised Baby Octopus with Black Olives.jpg}"
+                        alt=""/></a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- End Feed  -->
+
+
+<!-- Start Footer  -->
+<footer th:fragment="footer">
+    <div class="footer-main">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-12 col-sm-12">
+                    <div class="footer-top-box">
+                        <h3>Business Time</h3>
+                        <ul class="list-time">
+                            <li>Monday - Sunday: 08.00am to 10.00pm</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-12 col-sm-12">
+                    <div class="footer-top-box">
+                        <h3>Contact Us</h3>
+                        <ul class="list-time">
+                            <li><i class="fas fa-phone-square"></i> Phone number: +250789912345</li>
+                            <li><i class="fas fa-envelope"></i> Email: info@javahouse.com</li>
+                            <li><i class="fas fa-map-marker-alt"></i> Address: KK123, kacyru Rikiri, Kigali Heights</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-12 col-sm-12">
+                    <div class="footer-top-box">
+                        <h3>Social Media</h3>
+                        <p>Come with Java House - Only Fresh </p>
+                        <ul>
+                            <li><a href="/images/all.css"><i class="fab fa-facebook" aria-hidden="true" ></i></a></li>
+                            <li><a href="/images/all.css"><i class="fab fa-twitter" aria-hidden="true"></i></a></li>
+                            <li><a href="/images/all.css"><i class="fab fa-linkedin" aria-hidden="true"></i></a></li>
+                            <li><a href="/images/all.css"><i class="fab fa-google-plus" aria-hidden="true"></i></a></li>
+                            <li><a href="/images/all.css"><i class="fa fa-rss" aria-hidden="true"></i></a></li>
+                            <li><a href="/images/all.css"><i class="fab fa-pinterest-p" aria-hidden="true"></i></a></li>
+                            <li><a href="/images/all.css"><i class="fab fa-whatsapp" aria-hidden="true"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+<footer th:fragment="footer1">
+    <div style="background-color: #f0f0f0; color: #d92e2e; text-align: center; padding: 10px 0;">
+        <p style="margin: 0;">&copy; 2024 Java House. All Rights Reserved.</p>
+    </div>
+</footer>
+<div th:fragment="script">
+    <!-- ALL JS FILES -->
+    <script th:src="@{/js/jquery-3.2.1.min.js}"></script>
+    <script th:src="@{/js/popper.min.js}"></script>
+    <script th:src="@{/js/bootstrap.min.js}"></script>
+    <!-- ALL PLUGINS -->
+    <script th:src="@{/js/jquery.superslides.min.js}"></script>
+    <script th:src="@{/js/bootstrap-select.js}"></script>
+    <script th:src="@{/js/inewsticker.js}"></script>
+    <script th:src="@{/js/bootsnav.js}"></script>
+    <script th:src="@{/js/images-loded.min.js}"></script>
+    <script th:src="@{/js/isotope.min.js}"></script>
+    <script th:src="@{/js/owl.carousel.min.js}"></script>
+    <script th:src="@{/js/baguetteBox.min.js}"></script>
+    <script th:src="@{/js/form-validator.min.js}"></script>
+    <script th:src="@{/js/contact-form-script.js}"></script>
+    <script th:src="@{/js/custom.js}"></script>
+       <script src="/js/jquery-3.2.1.min.js"></script>
+    <!--    <script src="js/popper.min.js"></script>-->
+        <script src="/js/bootstrap.min.js"></script>
+    <!--    &lt;!&ndash; ALL PLUGINS &ndash;&gt;-->
+        <script src="/js/jquery.superslides.min.js"></script>
+    <!--    <script src="js/bootstrap-select.js"></script>-->
+    <!--    <script src="js/inewsticker.js"></script>-->
+    <!--    <script src="js/bootsnav.js."></script>-->
+        <script src="/js/images-loded.min.js"></script>
+    <!--    <script src="js/isotope.min.js"></script>-->
+    <!--    <script src="js/owl.carousel.min.js"></script>-->
+    <!--    <script src="js/baguetteBox.min.js"></script>-->
+    <!--    <script src="js/form-validator.min.js"></script>-->
+    <!--    <script src="js/contact-form-script.js"></script>-->
+    <!--    <script src="js/custom.js"></script>-->
+</div>
+</body>
+</html>

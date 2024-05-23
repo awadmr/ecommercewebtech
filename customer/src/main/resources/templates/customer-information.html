@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org/">
+<!-- Basic -->
+
+<head th:replace="~{fragments::head}">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Customer Information</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="author" content="">
+</head>
+<link href="@{/css/all.css}" rel="stylesheet">
+<link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon">
+<link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+<!-- Site CSS -->
+<link rel="stylesheet" href="/css/style.css">
+<!-- Responsive CSS -->
+<link rel="stylesheet" href="/css/responsive.css">
+<link rel="stylesheet" href="/images/all.css">
+<!-- Custom CSS -->
+<link rel="stylesheet" href="/css/custom.css">
+<link rel="stylesheet" href="/css/auth.css">
+<!-- Site Icons -->
+<link rel="shortcut icon" th:href="@{/images/favicon.ico}" type="image/x-icon">
+<link rel="apple-touch-icon" th:href="@{/images/apple-touch-icon.png}">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/fontawesome.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css">
+
+<!--[if lt IE 9]>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.3.0/respond.min.js"></script>
+<![endif]-->
+<link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+<link rel="stylesheet" th:href="@{/css/bootsnav.css}">
+<link rel="stylesheet" th:href="@{/css/bootstrap-select.css}">
+<link rel="stylesheet" th:href="@{/css/jquery-ui.css}">
+<link rel="stylesheet" th:href="@{/css/carousel-ticker.css}">
+<link rel="stylesheet" th:href="@{/css/code_animate.css}">
+<link rel="stylesheet" th:href="@{/css/superslides.css}">
+<link rel="stylesheet" th:href="@{/css/owl-carousel.min.css}">
+<link rel="stylesheet" th:href="@{/css/baguetteBox.min.css}">
+<link rel="stylesheet" th:href="@{/css/animate.css}">
+<link rel="stylesheet" th:href="@{/css/style.css}">
+<link rel="stylesheet" th:href="@{/css/responsive.css}">
+<link rel="stylesheet" th:href="@{/css/custom.css}">
+<body>
+<div th:replace="~{fragments::main-top}"></div>
+
+<!-- Start Main Top -->
+<header th:replace="~{fragments::main-header}"></header>
+<!-- End Main Top -->
+
+<!-- Start Top Search -->
+<div th:replace="~{fragments::top-search}"></div>
+<!-- End Top Search -->
+
+<!-- Start All Title Box -->
+<div th:replace="~{fragments::all-title-box}"></div>
+<!-- End All Title Box -->
+
+<div class="mainDiv">
+    <div class="cardStyle">
+        <h2 class="formTitle">
+            CUSTOMER INFORMATION
+        </h2>
+        <div th:if="${success}" class="text-center alert alert-success">
+            <p th:text="${success}"></p>
+        </div>
+        <form th:action="@{/update-profile}" method="post" name="signupForm" id="signupForm" th:object="${customer}">
+            <div class="inputDiv">
+                <label class="inputLabel" for="firstname">First name *</label>
+                <input type="text" id="firstname" th:field="*{firstName}" name="firstname" required>
+            </div>
+            <div class="alert alert-warning" th:if="${#fields.hasErrors('firstName')}" th:errors="*{firstName}"></div>
+
+            <div class="inputDiv">
+                <label class="inputLabel" for="lastname">Last name *</label>
+                <input type="text" id="lastname" th:field="*{lastName}" name="lastname" required>
+            </div>
+            <div class="alert alert-warning" th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}"></div>
+
+            <div class="inputDiv">
+                <label class="inputLabel" for="username">User name *</label>
+                <input type="text" id="username" th:field="*{username}" name="username" readonly>
+            </div>
+
+            <div class="inputDiv">
+                <label class="inputLabel" for="phoneNumber">Phone number *</label>
+                <input type="number" id="phoneNumber" th:field="*{phoneNumber}"
+                       th:placeholder="${customer.phoneNumber != null} ? ${customer.phoneNumber} : 'Enter your phone number'"
+                       name="phonenumber" maxlength="15" minlength="10">
+            </div>
+            <div class="alert alert-warning" th:if="${#fields.hasErrors('phoneNumber')}" th:errors="*{phoneNumber}"></div>
+
+            <div class="inputDiv">
+                <label class="inputLabel" for="country">Country *</label>
+                <select class="form-control" id="country" th:field="*{country}" name="country" required>
+                    <option value="">-SELECT-</option>
+                    <option th:each="country : ${countries}" th:value="${country.id}" th:text="${country.name}"></option>
+                </select>
+            </div>
+
+            <div class="inputDiv">
+                <label class="inputLabel" for="city">City *</label>
+                <select class="form-control" id="city" th:field="*{city}" name="city" required>
+                    <option value="">-SELECT-</option>
+                    <option th:each="city : ${cities}" th:value="${city.id}" th:text="${city.name}"></option>
+                </select>
+            </div>
+
+            <div class="inputDiv">
+                <label class="inputLabel" for="address">Address *</label>
+                <input type="text" id="address" th:field="*{address}"
+                       th:placeholder="${customer.address != null} ? ${customer.address} : 'Enter your address'"
+                       name="address">
+            </div>
+
+            <div class="buttonWrapper">
+                <button type="submit" id="submitButton" class="submitButton update-box">
+                    <span>Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<a href="#" id="back-to-top" title="Back to top" style="display: none;">&uarr;</a>
+
+<!-- ALL JS FILES -->
+<div th:replace="~{fragments::script}"></div>
+</body>
+
+</html>

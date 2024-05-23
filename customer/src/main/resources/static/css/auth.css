@@ -1,0 +1,94 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+.noi-dung {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.form {
+    background: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+}
+
+.form h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #333;
+}
+
+.alert {
+    margin-bottom: 20px;
+}
+
+.input-form {
+    margin-bottom: 15px;
+}
+
+.input-form input[type="text"],
+.input-form input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.input-form input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.input-form input[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+.input-form p {
+    margin-top: 10px;
+    text-align: center;
+}
+
+.input-form p a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.input-form p a:hover {
+    text-decoration: underline;
+}
+
+.icon-dang-nhap {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+}
+
+.icon-dang-nhap li {
+    margin: 0 10px;
+    font-size: 24px;
+    color: #007bff;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.icon-dang-nhap li:hover {
+    color: #0056b3;
+}
